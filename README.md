@@ -139,6 +139,7 @@ Feel free to fork, submit ideas via issues, or connect.
 **Shivoshita Jhalta**  
 
 📎 [LinkedIn](https://www.linkedin.com/in/shivoshita-jhalta)  
+📧 [shivoshita@gmail.com](mailto:shivoshita@gmail.com)  
 💬 For queries or collaboration: please open a GitHub issue.
 
 ---
