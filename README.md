@@ -140,6 +140,6 @@ Feel free to fork, submit ideas via issues, or connect.
 
 📎 [LinkedIn](https://www.linkedin.com/in/shivoshita-jhalta)  
 📧 [shivoshita@gmail.com](mailto:shivoshita@gmail.com)  
-💬 For queries or collaboration: please open a GitHub issue.
+> You can also reach out via GitHub issues for app-related discussions or collaboration opportunities. 
 
 ---
