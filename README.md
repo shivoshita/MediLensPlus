@@ -99,12 +99,15 @@ MediLens+ emphasizes modularity, security, and real-world performance — ideal 
 
 ## 📸 Screenshots
 
-> *Coming soon.*  
-Once development progresses, expect images of:
-- The camera scan screen  
-- Parsed results UI  
-- Scan history  
-- Onboarding walkthrough
+| Welcome Screen | Login Screen |
+|----------------|--------------|
+| ![Welcome](assets/screenshots/welcomeView_Expo.jpg) | ![Login](assets/screenshots/loginView_Expo.jpg) |
+
+| Sign Up Screen | Placeholder |
+|----------------|-------------|
+| ![SignUp](assets/screenshots/signUpView_Expo.jpg) | ![Placeholder](https://placehold.co/200x400?text=Coming+Soon) |
+
+
 
 ---
 
