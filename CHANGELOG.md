@@ -10,3 +10,9 @@
 - Testing navigation flow between Splash Screen, Welcome Screen, and Login Screen
 - Debugging and improving the back button functionality to ensure it navigates correctly to the Welcome Screen
 - Planning integration of Google, Facebook, and fingerprint authentication placeholders for upcoming implementation
+
+
+## [2025-07-13]
+- Updated the logic and UI of the main Home Screen
+- Added Icons
+- Cleared password conflicts and issues
