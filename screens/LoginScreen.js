@@ -16,9 +16,10 @@ const LoginScreen = ({ navigation }) => {
   const [secureText, setSecureText] = useState(true);
 
   const handleLogin = () => {
-    // Login logic
-    console.log('Logging in...');
+  console.log('Logging in...');
+  navigation.navigate('Home');
   };
+
 
   const handleForgotPassword = () => {
     // Navigate to Forgot Password screen

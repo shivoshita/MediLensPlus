@@ -105,7 +105,7 @@ MediLens+ emphasizes modularity, security, and real-world performance — ideal 
 
 | Sign Up Screen | Placeholder |
 |----------------|-------------|
-| ![SignUp](assets/screenshots/signUpView_Expo.jpg) | ![Placeholder](https://placehold.co/200x400?text=Coming+Soon) |
+| ![SignUp](assets/screenshots/signUpView_Expo.jpg) | ![Password](assets\screenshots\passwordScreen_Expo.jpg) |
 
 
 
