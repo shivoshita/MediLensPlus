@@ -294,7 +294,7 @@ const styles = StyleSheet.create({
   scanPrescriptionButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1A29FF',
+    backgroundColor: '#0018A8',
     paddingVertical: 8,
     paddingHorizontal: 10,
     borderRadius: 20,
@@ -374,7 +374,7 @@ const styles = StyleSheet.create({
   },
   bottomNav: {
     flexDirection: 'row',
-    backgroundColor: '#1A29FF',
+    backgroundColor: '#0018A8',
     paddingVertical: 10,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
