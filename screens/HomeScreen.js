@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
-  // Sample prescription data
   const prescriptions = [
     {
       id: 1,
@@ -41,13 +40,8 @@ const HomeScreen = ({ navigation }) => {
     }
   ];
 
-  const formatTime = (time) => {
-    return time;
-  };
-
-  const formatDate = (date) => {
-    return date;
-  };
+  const formatTime = (time) => time;
+  const formatDate = (date) => date;
 
   return (
     <View style={styles.container}>
@@ -67,12 +61,16 @@ const HomeScreen = ({ navigation }) => {
         </View>
         <View style={styles.headerRight}>
           <TouchableOpacity style={styles.iconButton}>
-            {/* Bell Icon SVG */}
-            <View style={styles.iconPlaceholder} />
+            <Image
+              source={require('../assets/icons/notifications_icon.png')}
+              style={{ width: 24, height: 24 }}
+            />
           </TouchableOpacity>
           <TouchableOpacity style={styles.iconButton}>
-            {/* Settings Icon SVG */}
-            <View style={styles.iconPlaceholder} />
+            <Image
+              source={require('../assets/icons/settings_icon.png')}
+              style={{ width: 24, height: 24 }}
+            />
           </TouchableOpacity>
         </View>
       </View>
@@ -86,19 +84,27 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.actionButtons}>
         <TouchableOpacity style={styles.scanButton}>
           <View style={styles.scanButtonContent}>
-            {/* QR Code Icon */}
-            <View style={styles.scanIcon} />
+            <Image
+              source={require('../assets/icons/scan_a_prescriptions_icon.png')}
+              style={{ width: 24, height: 24, marginRight: 10 }}
+            />
             <Text style={styles.scanButtonText}>Scan A Prescription</Text>
           </View>
         </TouchableOpacity>
         
         <View style={styles.quickActions}>
           <TouchableOpacity style={styles.quickActionButton}>
-            <View style={styles.quickActionIcon} />
+            <Image
+              source={require('../assets/icons/recent_scans_icon.png')}
+              style={{ width: 32, height: 32, marginBottom: 8 }}
+            />
             <Text style={styles.quickActionText}>Recent Scans</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.quickActionButton}>
-            <View style={styles.quickActionIcon} />
+            <Image
+              source={require('../assets/icons/ai_analysis_icon.png')}
+              style={{ width: 32, height: 32, marginBottom: 8 }}
+            />
             <Text style={styles.quickActionText}>AI Analysis</Text>
           </TouchableOpacity>
         </View>
@@ -107,11 +113,17 @@ const HomeScreen = ({ navigation }) => {
       {/* Secondary Actions */}
       <View style={styles.secondaryActions}>
         <TouchableOpacity style={styles.secondaryActionButton}>
-          <View style={styles.secondaryActionIcon} />
+          <Image
+            source={require('../assets/icons/prescriptions_at_a_glance_icon.png')}
+            style={{ width: 24, height: 24, marginRight: 8 }}
+          />
           <Text style={styles.secondaryActionText}>Prescriptions at a glance</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.secondaryActionButton}>
-          <View style={styles.secondaryActionIcon} />
+          <Image
+            source={require('../assets/icons/medicine_reminder_icon.png')}
+            style={{ width: 24, height: 24, marginRight: 8 }}
+          />
           <Text style={styles.secondaryActionText}>Medicine Reminders</Text>
         </TouchableOpacity>
       </View>
@@ -150,19 +162,31 @@ const HomeScreen = ({ navigation }) => {
       {/* Bottom Navigation */}
       <View style={styles.bottomNav}>
         <TouchableOpacity style={styles.navItem}>
-          <View style={[styles.navIcon, styles.navIconActive]} />
+          <Image
+            source={require('../assets/icons/home_icon.png')}
+            style={{ width: 24, height: 24, marginBottom: 4 }}
+          />
           <Text style={[styles.navText, styles.navTextActive]}>Home</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem}>
-          <View style={styles.navIcon} />
+          <Image
+            source={require('../assets/icons/chat_icon.png')}
+            style={{ width: 24, height: 24, marginBottom: 4 }}
+          />
           <Text style={styles.navText}>Search</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem}>
-          <View style={styles.navIcon} />
+          <Image
+            source={require('../assets/icons/people_icon.png')}
+            style={{ width: 24, height: 24, marginBottom: 4 }}
+          />
           <Text style={styles.navText}>Profile</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem}>
-          <View style={styles.navIcon} />
+          <Image
+            source={require('../assets/icons/calender_icon.png')}
+            style={{ width: 24, height: 24, marginBottom: 4 }}
+          />
           <Text style={styles.navText}>Calendar</Text>
         </TouchableOpacity>
       </View>
