@@ -10,6 +10,7 @@ import {
   FlatList,
   Dimensions,
   Platform,
+  ScrollView,
 } from 'react-native';
 
 const { width } = Dimensions.get('window');
@@ -176,7 +177,10 @@ const HomeScreen = ({ navigation }) => {
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.secondaryActionItem}>
+          <TouchableOpacity
+            style={styles.secondaryActionItem}
+            onPress={() => navigation.navigate('MedicineReminders')}
+          >
             <Image
               source={require('../assets/icons/medicine_reminder_icon.png')}
               style={styles.secondaryActionIcon}
@@ -186,106 +190,94 @@ const HomeScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        {/* Prescriptions */}
-        {atAGlanceActive ? (
-          <>
-            <FlatList
-              data={chunkedPrescriptions}
-              horizontal
-              pagingEnabled
-              showsHorizontalScrollIndicator={false}
-              onViewableItemsChanged={onViewRef.current}
-              viewabilityConfig={viewConfigRef.current}
-              keyExtractor={(_, index) => index.toString()}
-              renderItem={({ item }) => (
-                <View style={{ width, paddingHorizontal: 20, paddingTop: 20 }}>
-                  {item.map((prescription) => (
-                    <View key={prescription.id} style={styles.historySection}>
-                      <Text style={styles.historyTitle}>History • {prescription.date}</Text>
-                      <View style={styles.prescriptionCard}>
-                        <Text style={styles.timeText}>{prescription.time}</Text>
-                        <Text style={styles.medicationName}>{prescription.medication}</Text>
-                        <Text style={styles.activeIngredient}>
-                          Active Ingredient: {prescription.activeIngredient}
-                        </Text>
-                        <Text style={styles.classification}>
-                          Classification: {prescription.classification}
-                        </Text>
+        {/* Prescriptions - Wrapped in ScrollView */}
+        <ScrollView 
+          style={styles.scrollContainer}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.scrollContent}
+        >
+          {/* Conditional rendering */}
+          {atAGlanceActive ? (
+            <View style={styles.atAGlanceContainer}>
+              <FlatList
+                data={chunkedPrescriptions}
+                horizontal
+                pagingEnabled
+                showsHorizontalScrollIndicator={false}
+                onViewableItemsChanged={onViewRef.current}
+                viewabilityConfig={viewConfigRef.current}
+                keyExtractor={(_, index) => index.toString()}
+                renderItem={({ item }) => (
+                  <View style={{ width, paddingHorizontal: 20, paddingTop: 20 }}>
+                    {item.map((prescription) => (
+                      <View key={prescription.id} style={styles.historySection}>
+                        <Text style={styles.historyTitle}>History • {prescription.date}</Text>
+                        <View style={styles.prescriptionCard}>
+                          <Text style={styles.timeText}>{prescription.time}</Text>
+                          <Text style={styles.medicationName}>{prescription.medication}</Text>
+                          <Text style={styles.activeIngredient}>
+                            Active Ingredient: {prescription.activeIngredient}
+                          </Text>
+                          <Text style={styles.classification}>
+                            Classification: {prescription.classification}
+                          </Text>
+                        </View>
                       </View>
-                    </View>
-                  ))}
-                </View>
-              )}
-            />
+                    ))}
+                  </View>
+                )}
+              />
 
-            {/* Pagination Dots */}
-            <View style={styles.pagination}>
-              {chunkedPrescriptions.map((_, index) => (
-                <View
-                  key={index}
-                  style={[
-                    styles.dot,
-                    { opacity: currentIndex === index ? 1 : 0.3 },
-                  ]}
-                />
+              {/* Pagination Dots */}
+              <View style={styles.pagination}>
+                {chunkedPrescriptions.map((_, index) => (
+                  <View
+                    key={index}
+                    style={[
+                      styles.dot,
+                      { opacity: currentIndex === index ? 1 : 0.3 },
+                    ]}
+                  />
+                ))}
+              </View>
+            </View>
+          ) : (
+            <View style={styles.prescriptionsList}>
+              {prescriptions.map((prescription) => (
+                <View key={prescription.id} style={styles.historySection}>
+                  <Text style={styles.historyTitle}>History • {prescription.date}</Text>
+                  <View style={styles.prescriptionCard}>
+                    <Text style={styles.timeText}>{prescription.time}</Text>
+                    <Text style={styles.medicationName}>{prescription.medication}</Text>
+                    <Text style={styles.activeIngredient}>
+                      Active Ingredient: {prescription.activeIngredient}
+                    </Text>
+                    <Text style={styles.classification}>
+                      Classification: {prescription.classification}
+                    </Text>
+                  </View>
+                </View>
               ))}
             </View>
-          </>
-        ) : (
-          <View style={{ paddingHorizontal: 20, paddingTop: 20 }}>
-            {prescriptions.slice(0, 3).map((prescription) => (
-              <View key={prescription.id} style={styles.historySection}>
-                <Text style={styles.historyTitle}>History • {prescription.date}</Text>
-                <View style={styles.prescriptionCard}>
-                  <Text style={styles.timeText}>{prescription.time}</Text>
-                  <Text style={styles.medicationName}>{prescription.medication}</Text>
-                  <Text style={styles.activeIngredient}>
-                    Active Ingredient: {prescription.activeIngredient}
-                  </Text>
-                  <Text style={styles.classification}>
-                    Classification: {prescription.classification}
-                  </Text>
-                </View>
-              </View>
-            ))}
-          </View>
-        )}
+          )}
+        </ScrollView>
 
-        {/* Bottom Navigation */}
+        {/* Bottom Navigation (Always at bottom) */}
         <View style={styles.bottomNav}>
           <TouchableOpacity style={styles.navItem}>
-            <Image
-              source={require('../assets/icons/home_icon.png')}
-              style={styles.navIcon}
-              resizeMode="contain"
-            />
+            <Image source={require('../assets/icons/home_icon.png')} style={styles.navIcon} />
             <Text style={styles.navText}>Home</Text>
           </TouchableOpacity>
-
           <TouchableOpacity style={styles.navItem}>
-            <Image
-              source={require('../assets/icons/chat_icon.png')}
-              style={styles.navIcon}
-              resizeMode="contain"
-            />
+            <Image source={require('../assets/icons/chat_icon.png')} style={styles.navIcon} />
             <Text style={styles.navText}>Chat</Text>
           </TouchableOpacity>
-
           <TouchableOpacity style={styles.navItem}>
-            <Image
-              source={require('../assets/icons/people_icon.png')}
-              style={styles.navIcon}
-              resizeMode="contain"
-            />
+            <Image source={require('../assets/icons/people_icon.png')} style={styles.navIcon} />
             <Text style={styles.navText}>Profile</Text>
           </TouchableOpacity>
-
           <TouchableOpacity style={styles.navItem}>
-            <Image
-              source={require('../assets/icons/calender_icon.png')}
-              style={styles.navIcon}
-              resizeMode="contain"
-            />
+            <Image source={require('../assets/icons/calender_icon.png')} style={styles.navIcon} />
             <Text style={styles.navText}>Calendar</Text>
           </TouchableOpacity>
         </View>
@@ -313,7 +305,7 @@ const styles = StyleSheet.create({
   userName: { fontSize: 14, fontWeight: '600', color: '#000' },
   headerRight: { flexDirection: 'row', alignItems: 'center' },
   iconButton: { marginLeft: 10 },
-  topIcon: { width: 22, height: 22 },
+  topIcon: { width: 30, height: 30 },
   scanBanner: {
     backgroundColor: '#e8ebff',
     paddingHorizontal: 20,
@@ -336,7 +328,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#0018A8',
-    paddingVertical: 8,
+    paddingVertical: 11,
     paddingHorizontal: 10,
     borderRadius: 20,
   },
@@ -351,6 +343,21 @@ const styles = StyleSheet.create({
     color: '#0018A8',
     fontWeight: 'bold',
     textDecorationLine: 'underline',
+  },
+  scrollContainer: {
+    flex: 1,
+  },
+  scrollContent: {
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
+  atAGlanceContainer: {
+    flex: 1,
+    minHeight: 400, // Ensure minimum height for horizontal scroll
+  },
+  prescriptionsList: {
+    paddingHorizontal: 20,
+    paddingTop: 20,
   },
   pagination: {
     flexDirection: 'row',

@@ -111,10 +111,13 @@ MediLens+ emphasizes modularity, security, and real-world performance — ideal 
 |----------------|-------------|
 | ![SignUp](assets/screenshots/SignUpScreen_Expo.jpg) | ![Home Screen](assets/screenshots/passwordScreen_Expo.jpg) |
 
-| Home Screen | Prescriptions at a Glance |
+| Home Screen | Prescriptions at a Glance - 1 |
 |----------------|-------------|
-| ![SignUp](assets/screenshots/HomeScreen_Expo.jpg) | ![Prescriptions at a Glance](assets/screenshots/placeholder.png) |
+| ![SignUp](assets/screenshots/HomeScreen_Expo.jpg) | ![Prescriptions at a Glance](assets\screenshots\Prescriptions_At_A_Glance_Expo(1).jpg) |
 
+| Prescriptions at a Glance - 2 | Medicine Reminders |
+|----------------|-------------|
+| ![SignUp](assets\screenshots\Prescriptions_At_A_Glance_Expo(2).jpg) | ![Prescriptions at a Glance](assets\screenshots\placeholder.jpg) |
 
 ---
 
