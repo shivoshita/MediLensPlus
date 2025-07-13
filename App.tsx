@@ -6,7 +6,7 @@ import WelcomeScreen from './screens/WelcomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import SignUpFormScreen from './screens/SignUpFormScreen';
 import SetPasswordScreen from './screens/SetPasswordScreen';
-import HomeScreen from './screens/HomeScreen'; // Add this import
+import HomeScreen from './screens/HomeScreen';
 
 // Navigation interface definition
 interface Navigation {
@@ -54,7 +54,7 @@ const App = (): JSX.Element => {
         return <SplashScreen onFinish={() => setCurrentScreen('welcome')} />;
       case 'welcome':
         return <WelcomeScreen navigation={navigation} />;
-      case 'home': // Add this case
+      case 'home':
         return <HomeScreen navigation={navigation} />;
       case 'login':
         return <LoginScreen navigation={navigation} />;
