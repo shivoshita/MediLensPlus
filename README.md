@@ -99,13 +99,17 @@ MediLens+ emphasizes modularity, security, and real-world performance — ideal 
 
 ## 📸 Screenshots
 
+| Bundling Expo | Splash Screen |
+|----------------|--------------|
+| ![Bundling](assets/screenshots/ExpoBundling_Expo.jpg) | ![Splash](assets/screenshots/SplashScreen_Expo.jpg) |
+
 | Welcome Screen | Login Screen |
 |----------------|--------------|
 | ![Welcome](assets/screenshots/welcomeView_Expo.jpg) | ![Login](assets/screenshots/loginView_Expo.jpg) |
 
-| Sign Up Screen | Placeholder |
+| Sign Up Screen | Home Screen |
 |----------------|-------------|
-| ![SignUp](assets/screenshots/signUpView_Expo.jpg) | ![Home Screen](assets/screenshots/HomeScreen_Expo.jpg) |
+| ![SignUp](assets/screenshots/SignUpScreen_Expo.jpg) | ![Home Screen](assets/screenshots/HomeScreen_Expo.jpg) |
 
 
 
