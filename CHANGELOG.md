@@ -16,3 +16,7 @@
 - Updated the logic and UI of the main Home Screen
 - Added Icons
 - Cleared password conflicts and issues
+
+## [2025-07-14]
+- Made the interactive UI for "Prescriptions at a Glance" page
+- Made the interactive UI for "Medicine Reminders" page
