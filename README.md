@@ -107,10 +107,13 @@ MediLens+ emphasizes modularity, security, and real-world performance — ideal 
 |----------------|--------------|
 | ![Welcome](assets/screenshots/welcomeView_Expo.jpg) | ![Login](assets/screenshots/loginView_Expo.jpg) |
 
-| Sign Up Screen | Home Screen |
+| Sign Up Screen | Set Password Screen |
 |----------------|-------------|
-| ![SignUp](assets/screenshots/SignUpScreen_Expo.jpg) | ![Home Screen](assets/screenshots/HomeScreen_Expo.jpg) |
+| ![SignUp](assets/screenshots/SignUpScreen_Expo.jpg) | ![Home Screen](assets/screenshots/passwordScreen_Expo.jpg) |
 
+| Home Screen | Prescriptions at a Glance |
+|----------------|-------------|
+| ![SignUp](assets/screenshots/HomeScreen_Expo.jpg) | ![Prescriptions at a Glance](assets/screenshots/placeholder.png) |
 
 
 ---
