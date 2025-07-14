@@ -20,3 +20,8 @@
 ## [2025-07-14]
 - Made the interactive UI for "Prescriptions at a Glance" page
 - Made the interactive UI for "Medicine Reminders" page
+
+## [2025-07-15]
+- Made the 'Scan a Prescription' page
+- Integrated camera feature in the 'Scan Prescription' page
+- Added screenshots to README.md

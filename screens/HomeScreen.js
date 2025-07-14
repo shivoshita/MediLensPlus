@@ -142,14 +142,17 @@ const HomeScreen = ({ navigation }) => {
             <Text style={styles.quickActionText}>AI Analysis</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.scanPrescriptionButton}>
-            <Image
-              source={require('../assets/icons/scan_a_prescriptions_icon.png')}
-              style={{ width: 20, height: 20, marginRight: 8 }}
-              resizeMode="contain"
-            />
-            <Text style={styles.scanPrescriptionButtonText}>Scan A Prescription</Text>
-          </TouchableOpacity>
+          <TouchableOpacity 
+  style={styles.scanPrescriptionButton}
+  onPress={() => navigation.navigate('ScanPrescription')} // Add this onPress
+>
+  <Image
+    source={require('../assets/icons/scan_a_prescriptions_icon.png')}
+    style={{ width: 20, height: 20, marginRight: 8 }}
+    resizeMode="contain"
+  />
+  <Text style={styles.scanPrescriptionButtonText}>Scan A Prescription</Text>
+</TouchableOpacity>
         </View>
 
         {/* Secondary Actions */}

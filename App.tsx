@@ -8,6 +8,7 @@ import SignUpFormScreen from './screens/SignUpFormScreen';
 import SetPasswordScreen from './screens/SetPasswordScreen';
 import HomeScreen from './screens/HomeScreen';
 import MedicineReminders from './screens/MedicineReminders';
+import ScanPrescriptionScreen from './screens/ScanPrescriptionScreen';
 
 // Navigation interface definition
 interface Navigation {
@@ -65,6 +66,8 @@ const App = (): JSX.Element => {
         return <SetPasswordScreen navigation={navigation} />;
       case 'MedicineReminders':
         return <MedicineReminders navigation={{ navigate: setCurrentScreen }} />;
+      case 'ScanPrescription': // Add this case
+        return <ScanPrescriptionScreen navigation={navigation} />;
       default:
         return <WelcomeScreen navigation={navigation} />;
     }
