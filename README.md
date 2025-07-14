@@ -113,7 +113,7 @@ MediLens+ emphasizes modularity, security, and real-world performance — ideal 
 
 | Home Screen | Prescriptions at a Glance - 1 |
 |------------------------------|-------------|
-| ![Home Screen]<img src="assets/screenshots/HomeScreen_Expo.jpg" width="250"/>| ![Prescriptions at a Glance]<img src="assets/screenshots/Prescriptions_At_A_Glance_Expo(1).jpg" width="250"/> |
+|<img src="assets/screenshots/HomeScreen_Expo.jpg" width="300"/>| !<img src="assets/screenshots/Prescriptions_At_A_Glance_Expo(1).jpg" width="300"/> |
 
 | Prescriptions at a Glance - 2 | Medicine Reminders |
 |----------------|-------------|
