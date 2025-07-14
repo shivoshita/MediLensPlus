@@ -9,6 +9,7 @@ import SetPasswordScreen from './screens/SetPasswordScreen';
 import HomeScreen from './screens/HomeScreen';
 import MedicineReminders from './screens/MedicineReminders';
 import ScanPrescriptionScreen from './screens/ScanPrescriptionScreen';
+import MyProfile from './screens/MyProfile'; // Add this import
 
 // Navigation interface definition
 interface Navigation {
@@ -46,7 +47,23 @@ const App = (): JSX.Element => {
 
   const navigation: Navigation = {
     navigate: (screen) => setCurrentScreen(screen),
-    goBack: () => setCurrentScreen('welcome'),
+    goBack: () => {
+      // Enhanced goBack logic
+      switch (currentScreen) {
+        case 'MyProfile':
+          setCurrentScreen('home');
+          break;
+        case 'MedicineReminders':
+          setCurrentScreen('home');
+          break;
+        case 'ScanPrescription':
+          setCurrentScreen('home');
+          break;
+        default:
+          setCurrentScreen('welcome');
+          break;
+      }
+    },
     replace: (screen) => setCurrentScreen(screen),
   };
 
@@ -66,8 +83,10 @@ const App = (): JSX.Element => {
         return <SetPasswordScreen navigation={navigation} />;
       case 'MedicineReminders':
         return <MedicineReminders navigation={{ navigate: setCurrentScreen }} />;
-      case 'ScanPrescription': // Add this case
+      case 'ScanPrescription':
         return <ScanPrescriptionScreen navigation={navigation} />;
+      case 'MyProfile': // Add this case
+        return <MyProfile navigation={navigation} />;
       default:
         return <WelcomeScreen navigation={navigation} />;
     }

@@ -123,6 +123,10 @@ MediLens+ emphasizes modularity, security, and real-world performance — ideal 
 |----------------|-------------|
 | ![Scan a Prescription](assets/screenshots/Scan_A_Prescription_Expo.jpg) | ![Capture Successful](assets/screenshots/Successful_Capture_Expo.jpg) |
 
+| My Profile Screen | Placeholder Screen |
+|----------------|-------------|
+| ![My Profile Screen](assets/screenshots/MyProfile_Expo.jpg) | ![Placeholder Screen](assets/screenshots/DemoScreen_Expo.jpg) |
+
 ---
 
 ## 🛠 Installation / Run Locally

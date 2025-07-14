@@ -103,10 +103,12 @@ const MedicineReminders = ({ navigation }) => {
         {/* Header */}
         <View style={styles.header}>
           <View style={styles.headerLeft}>
+            <TouchableOpacity onPress={() => navigation.navigate('MyProfile')}>
             <Image
               source={require('../assets/user_photo.jpg')}
               style={styles.profileImage}
             />
+            </TouchableOpacity>
             <View>
               <Text style={styles.greeting}>Hi, Welcome Back!</Text>
               <Text style={styles.userName}>Shivoshita Jhalta</Text>
@@ -157,7 +159,10 @@ const MedicineReminders = ({ navigation }) => {
             <Text style={styles.quickActionText}>AI Analysis</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.scanPrescriptionButton}>
+          <TouchableOpacity 
+            style={styles.scanPrescriptionButton}
+            onPress={() => navigation.navigate('ScanPrescription')} // Add this onPress
+          >
             <Image
               source={require('../assets/icons/scan_a_prescriptions_icon.png')}
               style={{ width: 20, height: 20, marginRight: 8 }}
@@ -458,7 +463,7 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   
-  // Filter section with white background
+  // Filter section
   filterSection: {
     backgroundColor: '#fff',
     paddingTop: 20,
@@ -612,7 +617,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 4,
   },
   
-  // Add reminder button
   addReminderContainer: {
     paddingHorizontal: 20,
     paddingVertical: 15,

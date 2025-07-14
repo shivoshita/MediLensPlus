@@ -71,6 +71,9 @@ const HomeScreen = ({ navigation }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const chunkedPrescriptions = chunkPrescriptions(prescriptions, 3);
+  
+  // First 3 prescriptions in default view
+  const limitedPrescriptions = prescriptions.slice(0, 3);
 
   const onViewRef = React.useRef(({ viewableItems }) => {
     if (viewableItems.length > 0) {
@@ -88,10 +91,12 @@ const HomeScreen = ({ navigation }) => {
         {/* Header */}
         <View style={styles.header}>
           <View style={styles.headerLeft}>
-            <Image
-              source={require('../assets/user_photo.jpg')}
-              style={styles.profileImage}
-            />
+            <TouchableOpacity onPress={() => navigation.navigate('MyProfile')}>
+    <Image
+      source={require('../assets/user_photo.jpg')}
+      style={styles.profileImage}
+    />
+  </TouchableOpacity>
             <View>
               <Text style={styles.greeting}>Hi, Welcome Back!</Text>
               <Text style={styles.userName}>Shivoshita Jhalta</Text>
@@ -144,7 +149,7 @@ const HomeScreen = ({ navigation }) => {
 
           <TouchableOpacity 
   style={styles.scanPrescriptionButton}
-  onPress={() => navigation.navigate('ScanPrescription')} // Add this onPress
+  onPress={() => navigation.navigate('ScanPrescription')}
 >
   <Image
     source={require('../assets/icons/scan_a_prescriptions_icon.png')}
@@ -246,7 +251,8 @@ const HomeScreen = ({ navigation }) => {
             </View>
           ) : (
             <View style={styles.prescriptionsList}>
-              {prescriptions.map((prescription) => (
+              {/* Show only first 3 prescriptions in default view */}
+              {limitedPrescriptions.map((prescription) => (
                 <View key={prescription.id} style={styles.historySection}>
                   <Text style={styles.historyTitle}>History • {prescription.date}</Text>
                   <View style={styles.prescriptionCard}>
@@ -265,7 +271,7 @@ const HomeScreen = ({ navigation }) => {
           )}
         </ScrollView>
 
-        {/* Bottom Navigation (Always at bottom) */}
+        {/* Bottom Navigation */}
         <View style={styles.bottomNav}>
           <TouchableOpacity style={styles.navItem}>
             <Image source={require('../assets/icons/home_icon.png')} style={styles.navIcon} />
@@ -356,7 +362,7 @@ const styles = StyleSheet.create({
   },
   atAGlanceContainer: {
     flex: 1,
-    minHeight: 400, // Ensure minimum height for horizontal scroll
+    minHeight: 400,
   },
   prescriptionsList: {
     paddingHorizontal: 20,
